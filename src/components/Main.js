@@ -1,4 +1,3 @@
-import { click } from "@testing-library/user-event/dist/click";
 import React, { Component } from "react";
 
 // Form
@@ -8,7 +7,6 @@ import { FaPlus } from 'react-icons/fa';
 // Tarefas
 import { FaEdit, FaWindowClose } from 'react-icons/fa';
 
-
 import './Main.css';
 
 export default class Main extends Component {
@@ -17,6 +15,20 @@ export default class Main extends Component {
     tarefas : [ ],
     index: -1, 
   };
+
+  componentDidMount() {
+    const tarefas = JSON.parse(localStorage.getItem('tarefas'))
+
+    if(!tarefas) return;
+    this.setState({tarefas});
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const {tarefas} = this.state;
+      
+    if (tarefas === prevState.tarefas) return;
+    localStorage.setItem('tarefas', JSON.stringify(tarefas));
+  }
 
   handleSubmit = (e) => {
     e.preventDefault()
@@ -71,8 +83,6 @@ export default class Main extends Component {
   }
 
 
-
-
   render(){
     const { novaTarefa, tarefas } = this.state;
     
@@ -95,7 +105,7 @@ export default class Main extends Component {
           {tarefas.map((tarefa, index) => (
             <li key={tarefa}>
               {tarefa}
-              <span>
+                <span>
 
                 <FaEdit 
                 className="edit"
@@ -107,8 +117,8 @@ export default class Main extends Component {
                   onClick = {(e) => this.handleDelete(e, index)} 
                    />
 
-              </span>
-              </li>
+                </span>
+            </li>
           ))}
         </ul>
       </div>
