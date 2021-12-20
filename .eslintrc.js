@@ -18,6 +18,7 @@ module.exports = {
   ],
   rules: {
     'react/jsx-filename-extension': 'off',
-    'react/jsx-key' :'off'
+    'react/jsx-key' :'off',
+   /*  'react/prop-types' : 'off' */
   },
 };
