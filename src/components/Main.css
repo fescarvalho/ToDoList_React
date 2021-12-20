@@ -37,7 +37,7 @@ h1 {
   border: none;
   height: 40px;
   width: 40px;
-  background: var(--color-two);
+  background: var(--color-fundo);
   color: var(--color-texto);
   display: flex;
   align-items: center;
@@ -47,6 +47,49 @@ h1 {
 }
 
 .form button[type='submit']:hover{
-  background: var(--color-bottom);
-  color: var(--color-two);
+  background: var(--color-two);
+  color: #fff;
+}
+
+
+.tarefas {
+  margin-top: 30px;
+}
+
+.tarefas li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  transition: all 300ms;
+}
+
+.tarefas li:hover {
+  font-weight: bold;
+}
+
+.tarefas li:hover {
+  background: var(--color-textotwo)
+}
+
+.tarefas li .edit {
+  color: var(--color-one);
+}
+
+.tarefas li .delete {
+  color: var(--color-twoVariation);
+}
+
+.tarefas li .edit,
+.tarefas li .delete {
+  margin-right: 15px;
+  cursor: pointer;
+  transition: all 400ms;
+  
+}
+
+.tarefas li span{
+  display: flex;
+  align-items: center;
+
 }

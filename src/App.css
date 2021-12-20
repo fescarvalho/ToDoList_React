@@ -3,11 +3,13 @@
 
 :root {
   --color-fundo: #1a1919;
-  --color-texto: #E0E0E0;
-  --color-destaque: #CC8769;
-  --color-bottom: #E0A188;
+  --color-texto: #b3b3b3;
+  --color-textotwo: #cecece;
+  --color-destaque: #be3c03;
+  --color-bottom: #f01212;
   --color-one: #525252;
   --color-two:#350F00;
+  --color-twoVariation:#571f09;
 }
 
 * {
